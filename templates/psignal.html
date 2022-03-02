@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+	<!-- Start Section -->
+	<div class="section section-pad-md section-bg-alt" style="background:-webkit-linear-gradient(left, red 0%, blue 100%)" id="contact">
+		<div class="ui-shape ui-shape-s7"></div>
+		<div class="container">
+			<div class="row text-center">
+				<div class="col">
+					<div class="section-head-s7">
+						<a class="navbar-brand animated"
+                                                                                    data-animate="fadeInDown"
+                                                                                    data-delay=".65"
+                                                                                    href="{% url 'home' %}"><img
+            class="section-title-s7" alt="logo" src="{% static 'images/logo.png' %}"></a>
+						<h2 class="section-title-s7 animated" data-animate="fadeInUp"
+													 data-delay=".1">Buy Signal</h2>
+
+						<p class="animated" style="color: white;" data-animate="fadeInUp" data-delay=".2">Fill the form below</p></div>
+				</div><!-- .col --></div><!-- .row -->
+			<div class="row justify-content-center">
+				<div class="col-lg-8">
+				
+					<form  class="form-message text-center show-error-hint"
+						  action="" method="post">
+						  {% csrf_token %}
+						<div class="form-results"></div>
+						<div class="  animated" data-animate="fadeInUp" data-delay=".7">
+							<label for="invest" style="color: white;">Choose Signal Plan</label>
+							<select name="invest"  class="input-line required" aria-label="What are you Investing in?">
+								<option value="daily">Daily Plan</option>
+								<option value="weekly">Weekly Plan</option>
+								<option value="monthly">Monthly Plan</option>
+							</select>
+						</div>
+						<div class="input-field animated" data-animate="fadeInUp" data-delay=".6"><input name="amount"
+																										 type="text"
+																										 class="input-line required" style="color: white;"><label
+								class="input-title" style="color: white;">Amount in USD</label>
+						</div>
+
+						<div class="input-field animated" data-animate="fadeInUp" data-delay=".9">
+							<button type="submit" class="btn">Submit</button>
+						</div>
+					</form>
+				</div><!-- .col --></div><!-- .row --></div><!-- .container --></div><!-- End Section -->
+	<!-- Start Section -->
+
+{% endblock %}

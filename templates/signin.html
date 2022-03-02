@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+	<!-- Start Section -->
+	<div class="section section-pad-md section-bg-alt" style="background:-webkit-linear-gradient(left, red 0%, blue 100%)" id="contact">
+		<div class="ui-shape ui-shape-s7"></div>
+		<div class="container">
+			<div class="row text-center">
+				<div class="col">
+					<div class="section-head-s7"><h2 class="section-title-s7 animated" data-animate="fadeInUp"
+													 data-delay=".1">Sign In</h2>
+
+						<p class="animated" style="color: white;" data-animate="fadeInUp" data-delay=".2">Login to Your Account.</p></div>
+				</div><!-- .col --></div><!-- .row -->
+			<div class="row justify-content-center">
+				<div class="col-lg-8">
+					<div class="content-section col-md-8 col-md-offset-2">
+  <center>
+  <form method="POST" style="border: 1px solid black; margin: 4%; padding:10%; border-radius:1%;">
+    {% csrf_token %}
+    <fieldset class="" style="color:white;">
+      <div style="color:white;">{{ form|crispy}}</div>
+    </fieldset>
+   <center>
+    <button style="background: black; font-size: 2rem; padding:1%;" class="btn btn-outline-info" type="submit"><span class="glyphicon glyphicon-log-in"></span> &nbsp; login</button>
+  </center>
+  <br/>
+  <sub style="text-align: left;"><a href="{% url 'signup' %}" style="text-decoration: none; color: blue; padding:2%; cursor:pointer; margin-right:2%;">don't have account,sign up</a></sub>
+  </form>
+</center>
+ </div>
+				</div><!-- .col --></div><!-- .row --></div><!-- .container --></div><!-- End Section -->
+	<!-- Start Section -->
+
+{% endblock %}

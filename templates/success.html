@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+	<!-- Start Section -->
+	<div class="section section-pad-md section-bg-alt" style="background:-webkit-linear-gradient(left, red 0%, blue 100%)" id="contact">
+		<div class="ui-shape ui-shape-s7"></div>
+		<div class="container">
+			<div class="row text-center">
+				<div class="col">
+					<div class="section-head-s7">
+					<i class="fas fa-check-circle fa-4x" style="color: #3cf20b;" ></i><h2 class="section-title-s7 animated" style="color: #3cf20b;" data-animate="fadeInUp"
+													 data-delay=".1">Successful</h2>
+
+						<p class="animated" style="color: white;" data-animate="fadeInUp" data-delay=".2">Your request was successful and it's being processed.</br>You will get a feedback within 24hrs - 48hrs. <br> Thanks <br><a href="{% url 'home' %}" style="color: #3cf20b;">Click here to continue<a></p></div>
+				</div>
+				<!-- .col -->
+			</div>
+			<!-- .row -->
+		</div>
+		<!-- .container -->	
+	</div><!-- End Section -->
+	<!-- Start Section -->
+
+{% endblock %}

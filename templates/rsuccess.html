@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+	<!-- Start Section -->
+	<div class="section section-pad-md section-bg-alt" style="background:-webkit-linear-gradient(left, red 0%, blue 100%)" id="contact">
+		<div class="ui-shape ui-shape-s7"></div>
+		<div class="container">
+			<div class="row text-center">
+				<div class="col">
+					<div class="section-head-s7">
+					<i class="fas fa-check-circle fa-4x" style="color:green;" ></i><h2 class="section-title-s7 animated" style="color:green;" data-animate="fadeInUp"
+													 data-delay=".1"> Your Registration was Successful</h2>
+
+						<p class="animated" style="color:white;" data-animate="fadeInUp" data-delay=".2">Welcome to Capital Trade.</br>We are here to give you the best services, start mining your bitcoin, ethereum, dogecoin and you can also partake in our free classes to teach you how to make money from your phone.</p></div>
+						
+						<a href="{% url 'home' %}"><p style="color:green;">Click here to continue</p></a>
+				</div>
+				<!-- .col -->
+			</div>
+			<!-- .row -->
+		</div>
+		<!-- .container -->	
+	</div><!-- End Section -->
+	<!-- Start Section -->
+
+{% endblock %}

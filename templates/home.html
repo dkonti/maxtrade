@@ -1,0 +1,1095 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+	<header class="site-header is-sticky"><!-- Place Particle Js -->
+    <div id="particles-js" class="particles-container particles-js" style="background:-webkit-linear-gradient(left, red 0%, #0b7df2 100%)"></div><!-- Navbar -->
+    <div class="navbar navbar-full navbar-expand-lg is-transparent" id="mainnav"><a class="navbar-brand animated"
+                                                                                    data-animate="fadeInDown"
+                                                                                    data-delay=".65"
+                                                                                    href="{% url 'home' %}"><img
+            class="logo logo-dark" alt="logo" src="{% static 'images/logo.png' %}"><img
+            class="logo logo-light" alt="logo" src="{% static 'images/logo-full-white.png' %}"
+            ></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"><span
+                class="navbar-toggler-icon"><span class="ti ti-align-justify"></span></span></button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarToggle">
+            <ul class="navbar-nav animated remove-animation" data-animate="fadeInDown" data-delay=".75">
+                <li class="nav-item"><a class="nav-link menu-link" href="">Home<span
+                        class="sr-only">(current)</span></a></li>
+                <li class="nav-item"><a class="nav-link menu-link" href="{% url 'about' %}">About</a></li>
+                <li class="nav-item"><a class="nav-link menu-link" href="{% url 'signal' %}">Signal</a></li>
+				<li class="nav-item"><a class="nav-link menu-link" href="{% url 'accessories' %}">Accessories</a></li>
+                <li class="nav-item"><a class="nav-link menu-link" href="#team">Team</a></li>
+                <li class="nav-item"><a class="nav-link menu-link" href="#faq">Faqs</a></li>
+                <li class="nav-item"><a class="nav-link menu-link" href="#contact">Contact</a></li>
+            </ul>
+            <ul class="navbar-btns animated remove-animation" data-animate="fadeInDown" data-delay=".85">
+              
+                <li class="nav-item"><a class="nav-link btn btn-sm btn-outline menu-link"
+                                        href="{% url 'wallet' %}">Wallet</a></li>
+            </ul>
+        </div>
+    </div><!-- End Navbar --><!-- Banner/Slider -->
+    <div id="header" class="banner banner-zinnia">
+        <div class="ui-shape ui-shape-light ui-shape-header"></div>
+        <div class="container">
+            <div class="banner-content">
+                <div class="row align-items-center text-center justify-content-center">
+                    <div class="col-sm-10 col-md-12 col-lg-10">
+                        <div class="header-txt tab-center mobile-center"><h1 class="animated" data-animate="fadeInUp"
+                                                                             data-delay="1.25">Invest in Forex, Mine your Bitcoin
+                            and Ethereum and get Maximum Profits. <br class="d-none d-xl-block">
+                        </h1>
+
+                            <div class="gaps size-1x d-none d-md-block"></div>
+                            <p class="lead animated" data-animate="fadeInUp" data-delay="1.35">Start mining with maximum trade today! <br class="d-none d-sm-block"> </p>
+							
+                            <div class="gaps size-1x d-none d-md-block"></div>
+							{% if user.is_authenticated %}
+								<h2>Welcome {{ user.username }}</h2>
+								<p style="color: -webkit-linear-gradient(left, red 0%, #0b7df2 100%;"><a href="{% url 'logout' %}">Click here to <u>signout</u></a></p>
+							{% else %}
+                            <ul class="btns animated" data-animate="fadeInUp" data-delay="1.45">
+                                <li><a href="{% url 'signin' %}" class="btn btn-icon-s3" >SIGNIN<i
+                                        class="fas fa-sign-out-alt" style="background-color: #0b7df2;"></i></a></li>
+                                <li><a href="{% url 'signup' %}" class="btn btn-icon-s3">SIGNUP<i
+                                        class="fas fa-user" style="background-color: red;"></i></a></li>
+                            </ul>
+							{% endif %}
+                        </div>
+                    </div><!-- .col  --></div><!-- .row  --></div><!-- .banner-content  --></div><!-- .container  -->
+        <ul class="hr-social hr-social-mid animated" data-animate="fadeIn" data-delay="1.55">
+            <li><a href="#"><em class="fab fa-ethereum"></em></a></li>
+            <li><a href="#"><em class="fab fa-bitcoin"></em></a></li>
+            <li><a href="#"><em class="fas fa-chart-bar"></em></a></li>
+        </ul>
+    </div><!-- End Banner/Slider -->
+    <div class="presale-box animated" data-animate="fadeIn" data-delay="1.65">
+        <div class="container">
+            <div class="row no-gutters justify-content-center">
+                <div class="col-xl-4 col-md-5">
+                    <div class="presale-countdown"><h5 style="color: red;">MINING POWER</h5><h6>Mining Hash Rate: {{ hash }}</h6>
+
+                        <div class="token-countdown" data-date="2018/12/05"></div>
+                    </div>
+                </div><!-- .col  -->
+                <div class="col-xl-6 col-md-7">
+                    <div class="presale-status"><h5>Power</h5>
+
+                        <div class="presale-bar">
+                            <div class="presale-bar-percent" style="width:{{ hashrate.hash }}%">
+							</div>
+                        </div>
+                        <div class="presale-points d-flex justify-content-between">
+                            <span>0 TH/s</span><span>100 TH/s</span></div>
+                    </div>
+                </div><!-- .col  --></div><!-- .row  --></div><!-- .container  --></div><!-- .presale-box  -->
+				
+</header>
+	
+	<!-- End Header --><!-- Start Section -->
+	<div class="gaps size-6x d-md-none"></div>
+	<div class="gaps size-3x" ></div><!-- End Header --><!-- Start Section -->
+	<div class="section section-pad about-section no-pb section-bg" style="background:-webkit-linear-gradient(left, red 0%, #0b7df2 100%)" id="about">
+		<div class="container">
+			<div class="row justify-content-center text-center">
+				<div class="col-md-10">
+					<div class="section-head-s7"><h2 class="section-title-s7 animated" style="color:white;" data-animate="fadeInUp"
+													 data-delay=".1">About Us</h2>
+
+						<p class="lead animated" style="color:white;" data-animate="fadeInUp" data-delay=".2">Maximum Trade is a professional trading, investment and mining company with emphasis on cryptocurrency, forex, binary option, CFD's. We are a group of qualified and trained financiers with technical knowledge. We actively monitor and trade the forex market, binary option, CFD's..</p></div>
+				</div>
+			</div>
+			<div class="row justify-content-center text-center">
+				<div class="col-md-8">
+					<div class="video-box-s3 animated" data-animate="fadeInUp" data-delay=".3"><iframe width="300" height="200" src="https://www.youtube.com/embed/mrtSAgcpack" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+				</div>
+			</div>
+					<div class="container">
+			<div class="row justify-content-center text-center">
+					<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/cryptocurrencies/prices-all/" rel="noopener" target="_blank"><span class="blue-text">Cryptocurrency Markets</span></a> by TradingView</div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
+  {
+  "width": "100%",
+  "height": "500%",
+  "defaultColumn": "oscillators",
+  "screener_type": "crypto_mkt",
+  "displayCurrency": "USD",
+  "colorTheme": "dark",
+  "locale": "en",
+  "isTransparent": true
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+			</div>
+		</div>
+		</div>
+	</div><!-- End Section --><!-- Start Section -->
+
+	<div class="section section-pad section-bg" style="background:-webkit-linear-gradient(left, red 0%, #0b7df2 100%)" id="why">
+		<div class="ui-shape ui-shape-s1"></div>
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-lg-7 order-last">
+					<div class="animated" data-animate="fadeInUp" data-delay=".5"><img src="{% static 'images/zinnia/graph-zinnia-a.png' %}" alt="graph"></div>
+				</div>
+				<div class="col-lg-5 text-center text-lg-left res-m-bttm">
+					<div class="text-block"><h2 class="animated" style="color:white;" data-animate="fadeInUp" data-delay=".1">What we do</h2>
+
+						<p class="lead animated" style="color:white;" data-animate="fadeInUp" data-delay=".2">We provide a unique global perspective through our global network, in-depth market and sector knowledge, you are assured that your investment will yield with us because we diversify and we have multiple income streams which include but not limited to: Mining, CFD's, Forex, Stock & Commodities</p>
+				</div>
+			</div>
+		</div>
+	</div><!-- End Section --><!-- Start Section -->
+	<div class="section section-pad prblmsltn-section section-bg-alt" style="background:-webkit-linear-gradient(left, red 0%, #0b7df2 100%)" id="benifits">
+		<div class="ui-shape ui-shape-s2"></div>
+		<div class="container">
+			<div class="row justify-content-center text-center">
+				<div class="col-md-6 col-sm-8">
+					<div class="section-head-s7"><h2 class="section-title-s7 animated" style="color:white;" data-animate="fadeInUp"
+													 data-delay=".1">Choose your Plan</h2>
+
+						<p class="animated" style="color:white;" data-animate="fadeInUp" data-delay=".2">Choose what is right for you. </p></div>
+				</div>
+			</div>
+			<div class="prblmsltn-list">
+				<div class="prblmsltn-item">
+					<div class="row">
+						<div class="col-md-6 col-sm-12 animate-left delay-5ms">
+							<div class="prblm-item" style="background:-webkit-linear-gradient(left, red 0%, #0b7df2 100%)"><h2 class="prblm-title" style="color: white;">Forex</h2><h5 class="prblm-subtitle" style="color: white;">
+								Foreign Exchange</h5>
+								<p class="prblm-points" style="color: white;">
+									The foreign exchange (also known as forex or FX) market is a global marketplace for exchanging national currencies. Because of the worldwide reach of trade, commerce, and finance, forex markets tend to be the largest and most liquid asset markets in the world. Currencies trade against each other as exchange rate pairs.
+								</p>
+								<a href="{% url 'invest' %}" class="btn" style="color:white; background:;">invest</a>
+							</div>
+						</div>
+						<div class="col-md-6 col-sm-12 animate-right delay-7ms">
+							<div class="sltn-item" style="background:-webkit-linear-gradient(left, red 0%, #0b7df2 100%)"><h2 class="sltn-title">Mining</h2><h5 class="sltn-subtitle" style="color: white;">
+								Dual cloud mining</h5>
+								<p class="sltn-points" style="color:white;">
+									Unique product offering the mining of the most profitable cryptocurrencies in the cloud. You can mining one of them or both at the same time. Your hardware is already running and waiting for You!
+								</p>
+								<a href="{% url 'invest' %}" class="btn" style="color:white; background-color:">invest</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="prblmsltn-item">
+					<div class="row">
+						<div class="col-md-6 col-sm-12 animate-left delay-5ms">
+							<div class="prblm-item" style="background:-webkit-linear-gradient(left, red 0%, #0b7df2 100%)"><h2 class="prblm-title">BTC</h2><h5 class="prblm-subtitle" style="color: white;">
+								Bitcoin </h5>
+								<p class="prblm-points" style="color: white;">
+									The biggest cryptocurrency, number one on market. Bitcoin is the first open-source, decentralized and most popular cryptocurrency.
+								</p>
+								<a href="{% url 'invest' %}" class="btn" style="color:white; background-color:">invest</a>
+							</div>
+						</div>
+						<div class="col-md-6 col-sm-12 animate-right delay-7ms">
+							<div class="sltn-item" style="background:-webkit-linear-gradient(left, red 0%, #0b7df2 100%)"><h2 class="sltn-title">ETH</h2><h5 class="sltn-subtitle">
+								Ethereum</h5>
+								<p class="sltn-points" style="color:white;">    
+									The second biggest cryptocurrency on market. Ethereum is a decentralized platform that runs reliable smart contracts.
+								</p>
+								<a href="{% url 'invest' %}" class="btn" style="color:white; background-color:">invest</a>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		
+		<div class="gaps size-6x d-md-none"></div>
+			<div class="gaps size-3x" ></div><!-- End Header --><!-- Start Section -->
+				<div class="section section-pad about-section no-pb section-bg" style="background-color: black;" id="about">
+					<div class="container">
+						<div class="row justify-content-center text-center">
+							<div class="container animated" data-animate="fadeIn" data-delay="1.55">
+									<a href="{% url 'wallet' %}">
+									<div class="row justify-content-center text-center animate">
+										<img src="{% static 'images/p1.png' %}"/>
+									</div>
+									</a>
+								</div>
+								
+							<div class="container animated" data-animate="fadeIn" data-delay="1.55">
+									<a href="{% url 'wallet' %}">
+									<div class="row justify-content-center text-center animate" data-animate="fadeIn" data-delay="1.55">
+										<img src="{% static 'images/p2.png' %}"/>
+									</div>
+									</a>
+								</div>
+								
+							<div class="container animated" data-animate="fadeIn" data-delay="1.55">
+									<a href="{% url 'wallet' %}">
+									<div class="row justify-content-center text-center animate" data-animate="fadeIn" data-delay="1.55">
+										<img src="{% static 'images/p3.png' %}"/>
+									</div>
+									</a>
+								</div>
+								
+							<div class="container animated" data-animate="fadeIn" data-delay="1.55">
+									<a href="{% url 'wallet' %}">
+									<div class="row justify-content-center text-center animate" data-animate="fadeIn" data-delay="1.55">
+										<img src="{% static 'images/p4.png' %}"/>
+									</div>
+									</a>
+								</div>
+							
+						</div><!-- End Section --><!-- Start Section -->
+					</div>
+				</div>
+
+	
+	
+	
+	
+	
+	<div class="section section-pad token-sale-section section-bg-zinnia" style="background:-webkit-linear-gradient(left, red 0%, #0b7df2 100%);" id="tokenSale">
+		<div class="container">
+			<div class="row justify-content-center text-center">
+				<div class="col-md-6">
+					<div class="section-head-s7"><h2 class="section-title-s7 animated" data-animate="fadeInUp"
+													 data-delay=".1">Get Involved</h2></div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="tokdis-list">
+				<div class="row text-center text-lg-left">
+					<div class="col-md">
+						<div class="tokdis-item animated" data-animate="fadeInUp" data-delay=".2">
+							<span><h5>Register</h5></span>Create an Account for Free</div>
+					</div><!-- .col -->
+					<div class="col-md">
+						<div class="tokdis-item animated" data-animate="fadeInUp" data-delay=".3"><span><h5>Choose Mining Plan</h5></span>
+							Earnings depend on Hash Power</div>
+					</div><!-- .col -->
+					<div class="col-md">
+						<div class="tokdis-item animated" data-animate="fadeInUp" data-delay=".4"><span><h5>Invest</h5></span>
+							Choose What to Invest in</div>
+					</div><!-- .col -->
+					<div class="col-lg-4">
+						<div class="tokdis-item animated" data-animate="fadeInUp" data-delay=".5">
+							<span><h5>Profit</h5></span>Start Earning</div>
+					</div><!-- .col --></div><!-- .row --></div><!-- .tokdis-list --></div><!-- .container -->
+		<div class="gaps size-2x d-none d-md-block"></div>
+		<div class="gaps size-2x"></div>
+		<div class="toktmln-list">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg">
+						<div class="toktmln-item animated" data-animate="fadeInUp" data-delay=".6">
+							<div><span>NETWORK HASHRATE</span><span>1 EH/s is 1,000,000,000,000,000,000 (one quintillion) hashes per second.</span></div>
+							<div><span>175.121 EH/s</span><span>Max: 180 EH/s</span></div>
+						</div>
+					</div><!-- .col -->
+					<div class="col-lg">
+						<div class="toktmln-item animated" data-animate="fadeInUp" data-delay=".7">
+							<div><span>Difficulty</span><span>March 01 - March 15</span></div>
+							<div><span>26.643T</span><span>$0.354344/token</span></div>
+						</div>
+					</div><!-- .col -->
+					<div class="col-lg">
+						<div class="toktmln-item animated" data-animate="fadeInUp" data-delay=".8">
+							<div><span>Block reward</span><span>March 25- April 15</span></div>
+							<div><span>6.3422 BTC</span><span>$0.354344/token</span></div>
+						</div>
+					</div><!-- .col -->
+					<div class="col-lg">
+						<div class="toktmln-item animated" data-animate="fadeInUp" data-delay=".9">
+							<div><span>Price</span><span>April 20- May 20</span></div>
+							<div><span>36408.47 USD</span><span>$0.304344/token</span></div>
+						</div>
+					</div><!-- .col -->
+					<!-- .col --></div><!-- .row --></div><!-- .container --></div><!-- .toktmln --></div>
+	<!-- End Section --><!-- Start Section -->
+	<div class="section section-pad token-alocate-section section-bg" style="background:-webkit-linear-gradient(left, red 0%, #0b7df2 100%)" id="tokenAlocate">
+		<div class="ui-shape ui-shape-s3"></div>
+		<div class="container">
+			<div class="row justify-content-center text-center">
+				<div class="col-md-6">
+					<div class="section-head-s7"><h2 class="section-title-s7 animated" style="color:white;" data-animate="fadeInUp"
+													 data-delay=".1">Mining Analysis</h2></div>
+				</div>
+			</div>
+			<div class="tab-s4"><!-- Nav tabs -->
+				<ul class="nav nav-tabs text-center animated" style="background:-webkit-linear-gradient(left, red 0%, #0b7df2 100%)" data-animate="fadeInUp" data-delay=".2">
+					<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#tab-dist">Distribution </a></li>
+					<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#tab-fund">Funding
+						Allocation</a></li>
+				</ul>
+				<div class="gaps size-2x"></div>
+				<div class="gaps size-3x d-none d-xl-block"></div><!-- Tab panes -->
+				<div class="tab-content animated" data-animate="fadeInUp" data-delay=".3">
+					<div class="tab-pane animate" id="tab-dist">
+						<div class="tkn-crt">
+							<div class="tkn-crt-img"><img src="{% static 'images/zinnia/chart-zinnia-a.png' %}" alt="chart"></div>
+							<ul class="tkn-crt-lst">
+								<li class="tkn-crt-itm"><span class="tkn-crt-prcnt one"><span>60%</span></span><span
+										class="tkn-crt-ttl" style="color:white;">Mining Equipments</span></li>
+								<li class="tkn-crt-itm"><span class="tkn-crt-prcnt two"><span>8%</span></span><span
+										class="tkn-crt-ttl" style="color:white;">Reserve Fund</span></li>
+								<li class="tkn-crt-itm"><span class="tkn-crt-prcnt three"><span>15%</span></span><span
+										class="tkn-crt-ttl" style="color:white;">Team and Founders</span></li>
+								<li class="tkn-crt-itm"><span class="tkn-crt-prcnt four"><span>2%</span></span><span
+										class="tkn-crt-ttl" style="color:white;">Charity</span></li>
+								<li class="tkn-crt-itm"><span class="tkn-crt-prcnt five"><span>5%</span></span><span
+										class="tkn-crt-ttl" style="color:white;">Ecosystem Development</span></li>
+								
+							</ul>
+						</div>
+					</div><!-- End tab-pane -->
+					<div class="tab-pane animate active show" id="tab-fund">
+						<div class="tkn-crt">
+							<div class="tkn-crt-img"><img src="{% static 'images/zinnia/chart-zinnia-b.png' %}" alt="chart"></div>
+							<ul class="tkn-crt-lst">
+								<li class="tkn-crt-itm"><span class="tkn-crt-prcnt one"><span>40%</span></span><span
+										class="tkn-crt-ttl" style="color:white;">Product Develoment</span></li>
+								<li class="tkn-crt-itm"><span class="tkn-crt-prcnt two"><span>12%</span></span><span
+										class="tkn-crt-ttl" style="color:white;">Business Development</span></li>
+								<li class="tkn-crt-itm"><span class="tkn-crt-prcnt three"><span>20%</span></span><span
+										class="tkn-crt-ttl" style="color:white;">Marketing</span></li>
+								<li class="tkn-crt-itm"><span class="tkn-crt-prcnt four"><span>10%</span></span><span
+										class="tkn-crt-ttl" style="color:white;">Legal &amp; Regulation</span></li>
+								<li class="tkn-crt-itm"><span class="tkn-crt-prcnt five"><span>6%</span></span><span
+										class="tkn-crt-ttl" style="color:white;">Partner/Investor</span></li>
+								<li class="tkn-crt-itm"><span class="tkn-crt-prcnt six"><span>8%</span></span><span
+										class="tkn-crt-ttl" style="color:white;">Operational</span></li>
+								<li class="tkn-crt-itm"><span class="tkn-crt-prcnt seven"><span>4%</span></span><span
+										class="tkn-crt-ttl" style="color:white;">Contingency</span></li>
+							</ul>
+						</div>
+					</div><!-- End tab-pane --></div><!-- .tab-content --></div><!-- .tab-custom-s4 --></div>
+		<!-- .container --></div><!-- End Section --><!-- Start Section -->
+		
+	<div class="section section-pad token-sale-section section-bg-zinnia" style="background:-webkit-linear-gradient(left, red 0%, #0b7df2 100%)" id="tokenSale">
+		<div class="container">
+			<div class="row justify-content-center text-center">
+				<div class="col-md-6">
+					<div class="section-head-s7"><h2 class="section-title-s7 animated" data-animate="fadeInUp"
+													 data-delay=".1">BTC Mining Calculator</h2></div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+		<div class="align-items-center">
+			<a class="minerstat-widget" title="BTC mining calculator" data-coin="BTC" data-algo="SHA-256" data-info="no" data-style="light" data-color="#c03535" data-unit="TH" data-hashrate="100" data-width="" rel="nofollow" href="https://minerstat.com/coin/BTC">Bitcoin mining calculator</a><script async src="https://api.minerstat.com/v2/widgets/coin.js" charset="utf-8"></script>
+				<!-- .row --></div><!-- .container --></div></div><!-- .toktmln -->
+	<!-- End Section --><!-- Start Section -->
+	
+	<div class="section section-pad about-section no-pb section-bg" style="background:-webkit-linear-gradient(left, red 0%, #0b7df2 100%)" id="about">
+		<div class="container">
+			<div class="row justify-content-center text-center">
+				<div class="col-md-8">
+					<iframe width="300" height="200" src="https://www.youtube.com/embed/_IObd1Jd4zw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+	</div><!-- End Section --><!-- Start Section -->
+	
+	
+	
+	<!-- Start Section -->
+	<div class="section section-pad services-section section-bg" style="background:-webkit-linear-gradient(left, red 0%, #0b7df2 100%)" id="services">
+		<div class="ui-shape ui-shape-s4"></div>
+		<div class="container">
+			<div class="row justify-content-center text-center">
+				<div class="col-lg-6 col-sm-8">
+					<div class="section-head-s7"><h2 class="section-title-s7 animated" style="color:white;" data-animate="fadeInUp"
+													 data-delay=".1">Our Services</h2>
+
+						<p class="animated" style="color:white;" data-animate="fadeInUp" data-delay=".2">We Provide the following services:</p></div>
+				</div>
+			</div>
+			<div class="row align-items-center">
+				<div class="col-lg-7 res-m-bttm">
+					<div class="row justify-content-between text-center text-lg-left">
+						<div class="col-xl-5 col-md-6">
+							<div class="service-item animated" data-animate="fadeInUp" data-delay=".4">
+								<div class="service-icon mx-auto mx-lg-0"><img src="{% static 'images/zinnia/service-icon-a.png' %}"
+																			   alt="icon"></div>
+								<h5 class="service-title" style="color:white;">Trading & Investment</h5>
+
+								<p style="color:white;">We provide affordable investment plans that yields up to 30% return monthly. Our investment plan is really flexible and withdrawal is supported at any point in time..</p></div>
+						</div><!-- .col -->
+						<div class="col-xl-5 col-md-6">
+							<div class="service-item animated" data-animate="fadeInUp" data-delay=".5">
+								<div class="service-icon mx-auto mx-lg-0"><img src="{% static 'images/zinnia/service-icon-b.png' %}"
+																			   alt="icon"></div>
+								<h5 class="service-title" style="color:white;">Mobile & Online Wallet</h5>
+
+								<p style="color:white;">We also provide a safe and reliable digital money wallet where our customers can conviniently save or store digital currency and make withdrawal at anytime.</p></div>
+						</div><!-- .col -->
+						<div class="col-xl-5 col-md-6">
+							<div class="service-item animated" data-animate="fadeInUp" data-delay=".6">
+								<div class="service-icon mx-auto mx-lg-0"><img src="{% static 'images/zinnia/service-icon-c.png' %}"
+																			   alt="icon"></div>
+								<h5 class="service-title" style="color:white;">Easy to Communicate</h5>
+
+								<p style="color:white;">We have strong roots and believe in customer service and transparency. We are committed to optimum delivery and uprightness. We let our service do the talking. Any funds you put in Capita Trade are only used to facilitate trading through your account. Unlike banks, we do not operate on fractional reserves..</p></div>
+						</div><!-- .col -->
+						<div class="col-xl-5 col-md-6">
+							<div class="service-item animated" data-animate="fadeInUp" data-delay=".7">
+								<div class="service-icon mx-auto mx-lg-0"><img src="{% static 'images/zinnia/service-icon-d.png' %}"
+																			   alt="icon"></div>
+								<h5 class="service-title" style="color:white;">Security</h5>
+
+								<p style="color:white;">At Maximum Trade, we provide reliable data encryption of all data transferred through the site.</p></div>
+						</div><!-- .col --></div><!-- .row -->
+					<ul class="btns text-center text-lg-left animated" data-animate="fadeInUp" data-delay=".8">
+						<li><a href="#" class="btn btn-sm">Coming Soon</a></li>
+						<li><a href="#"><em class="fab fa-apple"></em></a><a href="#"><em class="fab fa-android"></em></a><a
+								href="#"><em class="fab fa-windows"></em></a></li>
+					</ul>
+				</div><!-- .col -->
+				<div class="col-lg-5 order-first order-lg-last res-m-bttm">
+					<div class="service-img animated" data-animate="fadeInUp" data-delay=".3"><img
+							src="{% static 'images/zinnia/app-screen.png' %}" alt="app-screen"></div>
+				</div><!-- .col --></div><!-- .row --></div><!-- .container --></div><!-- End Section -->
+
+		<!-- Start Section -->
+		
+		<div class="row justify-content-center text-center" style="background:-webkit-linear-gradient(left, red 0%, #0b7df2 100%)">
+				<div class="col-md-8">
+					<iframe width="300" height="200" src="https://www.youtube.com/embed/7VZP_dDFTP8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			</div>
+		
+	<div class="section section-pad section-bg" style="background:-webkit-linear-gradient(left, red 0%, #0b7df2 100%)" id="team">
+		<div class="ui-shape ui-shape-s5"></div>
+		<div class="container">
+			<div class="row justify-content-center text-center">
+				<div class="col-xl-6 col-lg-8">
+					<div class="section-head-s7"><h2 class="section-title-s7 animated" data-animate="fadeInUp"
+													 data-delay=".1">Executive team</h2>
+
+						<p class="animated" style="color:white;" data-animate="fadeInUp" data-delay=".2">Maximum Trade combines a passion
+							for esports, industry experise &amp; proven record in finance, development, marketing &
+							licensing.</p></div>
+				</div>
+			</div>
+			<div class="row justify-content-center text-center">
+				<div class="col-sm-6 col-lg-4">
+					<div class="team-circle animated" data-animate="fadeInUp" data-delay=".3">
+						<div class="team-photo"><img src="{% static 'images/team-a-lg.jpg' %}" alt=""/><a href="#team-profile-1"
+																						   class="expand-trigger content-popup"></a>
+						</div>
+						<div class="team-info"><h5 class="team-name">Richard Mason</h5><span class="team-title" style="color: white;">CEO &amp; Lead Blockchain </span>
+							<ul class="team-social">
+								<li><a href="#"><em class="fab fa-facebook-f"></em></a></li>
+								<li><a href="#"><em class="fab fa-linkedin-in"></em></a></li>
+								<li><a href="#"><em class="fab fa-twitter"></em></a></li>
+							</ul>
+						</div><!-- Start .team-profile  -->
+						<div id="team-profile-1" class="team-profile mfp-hide">
+							<button title="Close" type="button" class="mfp-close">×</button>
+							<div class="container-fluid">
+								<div class="row no-mg">
+									<div class="col-md-6">
+										<div class="team-profile-photo"><img src="{% static 'images/team-a-lg.jpg' %}" alt=""/></div>
+									</div><!-- .col  -->
+									<div class="col-md-6">
+										<div class="team-profile-info"><h3 class="name">Richard Mason</h3>
+
+											<p class="sub-title">CEO &amp; Lead Blockchain </p>
+											<ul class="tpi-social">
+												<li><a href="#"><em class="fab fa-facebook-f"></em></a></li>
+												<li><a href="#"><em class="fab fa-linkedin-in"></em></a></li>
+												<li><a href="#"><em class="fab fa-twitter"></em></a></li>
+											</ul>
+											<p>He is a great man with love for team work and discipline. </p>
+
+											<div class="skill-bars">
+												<div class="single-skill-bar">
+													<div class="row no-mg">
+														<div class="col-8 no-pd"><span class="skill-title">Blockckain Technology</span>
+														</div>
+														<div class="col-4 text-right no-pd"><span
+																class="skill-percent">85%</span></div>
+													</div>
+													<div class="skill-bar">
+														<div class="skill-bar-percent gradiant-background"
+															 style="width:85%"></div>
+													</div>
+												</div>
+												<div class="single-skill-bar">
+													<div class="row no-mg">
+														<div class="col-8 no-pd"><span class="skill-title">Team Work</span></div>
+														<div class="col-4 text-right no-pd"><span
+																class="skill-percent">90%</span></div>
+													</div>
+													<div class="skill-bar">
+														<div class="skill-bar-percent gradiant-background"
+															 style="width:90%"></div>
+													</div>
+												</div>
+												<div class="single-skill-bar">
+													<div class="row no-mg">
+														<div class="col-8 no-pd"><span class="skill-title">Management</span></div>
+														<div class="col-4 text-right no-pd"><span
+																class="skill-percent">75%</span></div>
+													</div>
+													<div class="skill-bar">
+														<div class="skill-bar-percent gradiant-background"
+															 style="width:75%"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div><!-- .col  --></div><!-- .row  --></div><!-- .container  --></div>
+						<!-- .team-profile  --></div>
+				</div><!-- .col  -->
+							<div class="col-lg-4 col-sm-6">
+					<div class="team-circle animated" data-animate="fadeInUp" data-delay=".8">
+						<div class="team-photo"><img src="{% static 'images/team-c-lg.jpg' %}" alt="team"><a href="#team-profile-5"
+																							  class="expand-trigger content-popup"></a>
+						</div>
+						<div class="team-info"><h5 class="team-name">Linda Shore</h5><span
+								class="team-title" style="color: white;">Board Advisor</span>
+							<ul class="team-social">
+								<li><a href="#"><em class="fab fa-facebook-f"></em></a></li>
+								<li><a href="#"><em class="fab fa-linkedin-in"></em></a></li>
+								<li><a href="#"><em class="fab fa-twitter"></em></a></li>
+							</ul>
+						</div><!-- Start .team-profile  -->
+						<div id="team-profile-5" class="team-profile mfp-hide">
+							<button title="Close" type="button" class="mfp-close">×</button>
+							<div class="container-fluid">
+								<div class="row no-mg">
+									<div class="col-md-6">
+										<div class="team-profile-photo"><img src="{% static 'images/team-c-lg.jpg' %}" alt="team"/></div>
+									</div><!-- .col  -->
+									<div class="col-md-6">
+										<div class="team-profile-info"><h3 class="name">Linda Shore</h3>
+
+											<p class="sub-title">Board Advisor</p>
+											<ul class="tpi-social">
+												<li><a href="#"><em class="fab fa-facebook-f"></em></a></li>
+												<li><a href="#"><em class="fab fa-linkedin-in"></em></a></li>
+												<li><a href="#"><em class="fab fa-twitter"></em></a></li>
+											</ul>
+											<p>She is a proffessional trader and consultant </p>
+
+											<div class="skill-bars">
+												<div class="single-skill-bar">
+													<div class="row no-mg">
+														<div class="col-8 no-pd"><span class="skill-title">Researching</span>
+														</div>
+														<div class="col-4 text-right no-pd"><span
+																class="skill-percent">85%</span></div>
+													</div>
+													<div class="skill-bar">
+														<div class="skill-bar-percent gradiant-background"
+															 style="width:85%"></div>
+													</div>
+												</div>
+												<div class="single-skill-bar">
+													<div class="row no-mg">
+														<div class="col-8 no-pd"><span class="skill-title">Consulting</span></div>
+														<div class="col-4 text-right no-pd"><span
+																class="skill-percent">90%</span></div>
+													</div>
+													<div class="skill-bar">
+														<div class="skill-bar-percent gradiant-background"
+															 style="width:90%"></div>
+													</div>
+												</div>
+												<div class="single-skill-bar">
+													<div class="row no-mg">
+														<div class="col-8 no-pd"><span class="skill-title">Trading</span></div>
+														<div class="col-4 text-right no-pd"><span
+																class="skill-percent">75%</span></div>
+													</div>
+													<div class="skill-bar">
+														<div class="skill-bar-percent gradiant-background"
+															 style="width:75%"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div><!-- .col  --></div><!-- .row  --></div><!-- .container  --></div>
+						<!-- .team-profile  --></div>
+				</div><!-- .col  -->
+				
+			<div class="row justify-content-center text-center">
+				<div class="col-sm-6 col-lg-4">
+					<div class="team-circle animated" data-animate="fadeInUp" data-delay=".5">
+						<div class="team-photo"><img src="{% static 'images/team-b-lg.jpg' %}" alt="team"><a href="#team-profile-3"
+																							  class="expand-trigger content-popup"></a>
+						</div>
+						<div class="team-info"><h5 class="team-name" >Ethan Kauffman</h5><span class="team-title" style="color: white;">CTO</span>
+							<ul class="team-social">
+								<li><a href="#"><em class="fab fa-facebook-f"></em></a></li>
+								<li><a href="#"><em class="fab fa-linkedin-in"></em></a></li>
+								<li><a href="#"><em class="fab fa-twitter"></em></a></li>
+							</ul>
+						</div><!-- Start .team-profile  -->
+						<div id="team-profile-3" class="team-profile mfp-hide">
+							<button title="Close" type="button" class="mfp-close">×</button>
+							<div class="container-fluid">
+								<div class="row no-mg">
+									<div class="col-md-6">
+										<div class="team-profile-photo"><img src="{% static 'images/team-b-lg.jpg' %}" alt="team"/></div>
+									</div><!-- .col  -->
+									<div class="col-md-6">
+										<div class="team-profile-info"><h3 class="name">Ethan Kauffman</h3>
+
+											<p class="sub-title">CTO</p>
+											<ul class="tpi-social">
+												<li><a href="#"><em class="fab fa-facebook-f"></em></a></li>
+												<li><a href="#"><em class="fab fa-linkedin-in"></em></a></li>
+												<li><a href="#"><em class="fab fa-twitter"></em></a></li>
+											</ul>
+											<p>He is a great man to work with. </p>
+
+											<div class="skill-bars">
+												<div class="single-skill-bar">
+													<div class="row no-mg">
+														<div class="col-8 no-pd"><span class="skill-title">Programming</span>
+														</div>
+														<div class="col-4 text-right no-pd"><span
+																class="skill-percent">85%</span></div>
+													</div>
+													<div class="skill-bar">
+														<div class="skill-bar-percent gradiant-background"
+															 style="width:85%"></div>
+													</div>
+												</div>
+												<div class="single-skill-bar">
+													<div class="row no-mg">
+														<div class="col-8 no-pd"><span class="skill-title">Bitcoin &amp; Web3 Technology</span></div>
+														<div class="col-4 text-right no-pd"><span
+																class="skill-percent">90%</span></div>
+													</div>
+													<div class="skill-bar">
+														<div class="skill-bar-percent gradiant-background"
+															 style="width:90%"></div>
+													</div>
+												</div>
+												<div class="single-skill-bar">
+													<div class="row no-mg">
+														<div class="col-8 no-pd"><span class="skill-title">Research</span></div>
+														<div class="col-4 text-right no-pd"><span
+																class="skill-percent">75%</span></div>
+													</div>
+													<div class="skill-bar">
+														<div class="skill-bar-percent gradiant-background"
+															 style="width:75%"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div><!-- .col  --></div><!-- .row  --></div><!-- .container  --></div>
+						<!-- .team-profile  --></div>
+				</div><!-- .col  -->
+				<div class="col-lg-4 col-sm-6">
+					<div class="team-circle animated" data-animate="fadeInUp" data-delay=".9">
+						<div class="team-photo"><img src="{% static 'images/team-d-lg.jpg' %}" alt="team"><a href="#team-profile-6"
+																							  class="expand-trigger content-popup"></a>
+						</div>
+						<div class="team-info"><h5 class="team-name">Gibson M
+						itchell</h5><span
+								class="team-title" style="color: white;">COO &amp; Lead Blockchain</span>
+							<ul class="team-social">
+								<li><a href="#"><em class="fab fa-facebook-f"></em></a></li>
+								<li><a href="#"><em class="fab fa-linkedin-in"></em></a></li>
+								<li><a href="#"><em class="fab fa-twitter"></em></a></li>
+							</ul>
+						</div><!-- Start .team-profile  -->
+						<div id="team-profile-6" class="team-profile mfp-hide">
+							<button title="Close" type="button" class="mfp-close">×</button>
+							<div class="container-fluid">
+								<div class="row no-mg">
+									<div class="col-md-6">
+										<div class="team-profile-photo"><img src="{% static 'images/team-d-lg.jpg' %}" alt="team"/></div>
+									</div><!-- .col  -->
+									<div class="col-md-6">
+										<div class="team-profile-info"><h3 class="name">Gibson mitchell</h3>
+
+											<p class="sub-title">COO &amp; Lead Blockchain</p>
+											<ul class="tpi-social">
+												<li><a href="#"><em class="fab fa-facebook-f"></em></a></li>
+												<li><a href="#"><em class="fab fa-linkedin-in"></em></a></li>
+												<li><a href="#"><em class="fab fa-twitter"></em></a></li>
+											</ul>
+											<p>. </p>
+
+											<div class="skill-bars">
+												<div class="single-skill-bar">
+													<div class="row no-mg">
+														<div class="col-8 no-pd"><span class="skill-title">Record Keeeping</span>
+														</div>
+														<div class="col-4 text-right no-pd"><span
+																class="skill-percent">85%</span></div>
+													</div>
+													<div class="skill-bar">
+														<div class="skill-bar-percent gradiant-background"
+															 style="width:85%"></div>
+													</div>
+												</div>
+												<div class="single-skill-bar">
+													<div class="row no-mg">
+														<div class="col-8 no-pd"><span class="skill-title">Researching</span></div>
+														<div class="col-4 text-right no-pd"><span
+																class="skill-percent">90%</span></div>
+													</div>
+													<div class="skill-bar">
+														<div class="skill-bar-percent gradiant-background"
+															 style="width:90%"></div>
+													</div>
+												</div>
+												<div class="single-skill-bar">
+													<div class="row no-mg">
+														<div class="col-8 no-pd"><span class="skill-title">Communication</span></div>
+														<div class="col-4 text-right no-pd"><span
+																class="skill-percent">75%</span></div>
+													</div>
+													<div class="skill-bar">
+														<div class="skill-bar-percent gradiant-background"
+															 style="width:75%"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div><!-- .col  --></div><!-- .row  --></div><!-- .container  --></div>
+						<!-- .team-profile  --></div>
+				</div><!-- .col  -->
+				<div class="col-lg-4 col-sm-6">
+					<div class="team-circle animated" data-animate="fadeInUp" data-delay="1">
+						<div class="team-photo"><img src="{% static 'images/team-e-lg.jpg' %}" alt="team"><a href="#team-profile-7"
+																							  class="expand-trigger content-popup"></a>
+						</div>
+						<div class="team-info"><h5 class="team-name">Bryan Isabella</h5><span class="team-title" style="color: white;">Market Analyst</span>
+							<ul class="team-social">
+								<li><a href="#"><em class="fab fa-facebook-f"></em></a></li>
+								<li><a href="#"><em class="fab fa-linkedin-in"></em></a></li>
+								<li><a href="#"><em class="fab fa-twitter"></em></a></li>
+							</ul>
+						</div><!-- Start .team-profile  -->
+						<div id="team-profile-7" class="team-profile mfp-hide">
+							<button title="Close" type="button" class="mfp-close">×</button>
+							<div class="container-fluid">
+								<div class="row no-mg">
+									<div class="col-md-6">
+										<div class="team-profile-photo"><img src="{% static 'images/team-e-lg.jpg' %}" alt="team"/></div>
+									</div><!-- .col  -->
+									<div class="col-md-6">
+										<div class="team-profile-info"><h3 class="name">Bryan Isabella</h3>
+
+											<p class="sub-title">Market Analyst</p>
+											<ul class="tpi-social">
+												<li><a href="#"><em class="fab fa-facebook-f"></em></a></li>
+												<li><a href="#"><em class="fab fa-linkedin-in"></em></a></li>
+												<li><a href="#"><em class="fab fa-twitter"></em></a></li>
+											</ul>
+											<p>He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis
+												icing elit. Simi lique, autem. </p>
+
+											<div class="skill-bars">
+												<div class="single-skill-bar">
+													<div class="row no-mg">
+														<div class="col-8 no-pd"><span class="skill-title">Analyzing Market Data </span>
+														</div>
+														<div class="col-4 text-right no-pd"><span
+																class="skill-percent">85%</span></div>
+													</div>
+													<div class="skill-bar">
+														<div class="skill-bar-percent gradiant-background"
+															 style="width:85%"></div>
+													</div>
+												</div>
+												<div class="single-skill-bar">
+													<div class="row no-mg">
+														<div class="col-8 no-pd"><span class="skill-title">Data Science</span></div>
+														<div class="col-4 text-right no-pd"><span
+																class="skill-percent">90%</span></div>
+													</div>
+													<div class="skill-bar">
+														<div class="skill-bar-percent gradiant-background"
+															 style="width:90%"></div>
+													</div>
+												</div>
+												<div class="single-skill-bar">
+													<div class="row no-mg">
+														<div class="col-8 no-pd"><span class="skill-title">Communication</span></div>
+														<div class="col-4 text-right no-pd"><span
+																class="skill-percent">75%</span></div>
+													</div>
+													<div class="skill-bar">
+														<div class="skill-bar-percent gradiant-background"
+															 style="width:75%"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div><!-- .col  --></div><!-- .row  --></div><!-- .container  --></div>
+						<!-- .team-profile  --></div>
+				</div><!-- .col  --></div><!-- .row  --></div>
+	</div><!-- Start Section -->
+	<div class="section section-pad section-bg-zinnia" style="background:-webkit-linear-gradient(left, red 0%, #0b7df2 100%)" id="partners">
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-md-6 offset-md-3">
+					<div class="section-head"><h3 class="section-title-md animated" data-animate="fadeInUp" data-delay=".1">
+						Our Partner</h3></div>
+				</div>
+			</div>
+			<div class="partner-list">
+				<div class="row text-center">
+					<div class="col-sm col-6">
+						<div class="single-partner animated" data-animate="fadeInUp" data-delay=".2"><img
+								src="{% static 'images/partner-xs-light-a.png' %}" alt="partner"></div>
+					</div>
+					<div class="col-sm col-6">
+						<div class="single-partner animated" data-animate="fadeInUp" data-delay=".3"><img
+								src="{% static 'images/partner-xs-light-b.png' %}" alt="partner"></div>
+					</div>
+					<div class="col-sm col-6">
+						<div class="single-partner animated" data-animate="fadeInUp" data-delay=".4"><img
+								src="{% static 'images/partner-xs-light-c.png' %}" alt="partner"></div>
+					</div>
+					<div class="col-sm col-6">
+						<div class="single-partner animated" data-animate="fadeInUp" data-delay=".5"><img
+								src="{% static 'images/partner-xs-light-d.png' %}" alt="partner"></div>
+					</div>
+					<div class="col-sm col-6">
+						<div class="single-partner animated" data-animate="fadeInUp" data-delay=".6"><img
+								src="{% static 'images/partner-xs-light-e.png' %}" alt="partner"></div>
+					</div>
+					<div class="col-sm col-6">
+						<div class="single-partner animated" data-animate="fadeInUp" data-delay=".7"><img
+								src="{% static 'images/partner-xs-light-f.png' %}" alt="partner"></div>
+					</div>
+				</div>
+				<div class="row text-center">
+					<div class="col-md-10 offset-md-1">
+						<div class="row">
+							<div class="col-sm col-6">
+								<div class="single-partner animated" data-animate="fadeInUp" data-delay=".8"><img
+										src="{% static 'images/partner-sm-light-a.png' %}" alt="partner"></div>
+							</div>
+							<div class="col-sm col-6">
+								<div class="single-partner animated" data-animate="fadeInUp" data-delay=".9"><img
+										src="{% static 'images/partner-sm-light-b.png' %}" alt="partner"></div>
+							</div>
+							<div class="col-sm col-6">
+								<div class="single-partner animated" data-animate="fadeInUp" data-delay="1"><img
+										src="{% static 'images/partner-sm-light-c.png' %}" alt="partner"></div>
+							</div>
+							<div class="col-sm col-6">
+								<div class="single-partner animated" data-animate="fadeInUp" data-delay="1.1"><img
+										src="{% static 'images/partner-sm-light-d.png' %}" alt="partner"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><!-- End Section --><!-- Start Section -->
+	<div class="section section-pad-md section-bg" style="background:-webkit-linear-gradient(left, red 0%, #0b7df2 100%)" id="faq">
+		<div class="ui-shape ui-shape-s6"></div>
+		<div class="container">
+			<div class="row justify-content-center text-center">
+				<div class="col-md-7">
+					<div class="section-head-s7"><h2 class="section-title-s7 animated" data-animate="fadeInUp"
+													 data-delay=".1">Frequently asked questions</h2>
+
+						<p class="animated" style="color:white;" data-animate="fadeInUp" data-delay=".2">Below we’ve provided a bit of Mining, ICO
+							Token, cryptocurrencies, and few others. If you have any other questions, please get in touch
+							using the contact form below.</p></div>
+				</div>
+			</div>
+			<div class="row align-items-center justify-content-center">
+				<div class="col-md-10">
+					<div class="tab-custom-s3"><!-- Nav tabs -->
+						<ul class="nav nav-tabs text-center justify-content-center animated" data-animate="fadeInUp"
+							data-delay=".1">
+							<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#tab-1">General</a></li>
+							<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#tab-2">Mining &amp; Investment</a>
+							</li>
+							<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#tab-3">ICO Tokens</a></li>
+						</ul>
+						<div class="gaps size-1x"></div><!-- Tab panes -->
+						<div class="tab-content animated" data-animate="fadeInUp" data-delay=".2">
+							<div class="tab-pane fade show active" id="tab-1">
+								<div class="accordion-s2" id="accordion-1">
+									<div class="card active">
+										<div class="card-header"><h5><a data-toggle="collapse" data-target="#collapse-1-1">What
+											is ICO Crypto?<span class="plus-minus"><span
+													class="ti ti-angle-up"></span></span></a></h5></div>
+										<div id="collapse-1-1" class="collapse show" data-parent="#accordion-1">
+											<div class="card-body"><p>ICO Crypto - is unique blockchain platform; that is
+												secure, smart and easy-to-use platform, and completely disrupting the way
+												businesses raise capital, and the way investors buy and sell. </p></div>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-header"><h5><a class="collapsed" data-toggle="collapse"
+																		data-target="#collapse-1-2">What cryptocurrencies
+											can I use to purchase?<span class="plus-minus"><span
+													class="ti ti-angle-up"></span></span></a></h5></div>
+										<div id="collapse-1-2" class="collapse" data-parent="#accordion-1">
+											<div class="card-body"><p>Investors can generally use fiat or digital currency to buy the new tokens, and it is increasinly common for investors to pay using other forms of crypto such as bitcoin and ethereum.</p></div>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-header"><h5><a class="collapsed" data-toggle="collapse"
+																		data-target="#collapse-1-3">How can I participate in
+											the ICO Token sale?<span class="plus-minus"><span class="ti ti-angle-up"></span></span></a>
+										</h5></div>
+										<div id="collapse-1-3" class="collapse" data-parent="#accordion-1">
+											<div class="card-body"><p>1- Resiter with us<br>2- Exchange fiat for bitcoin or ether<br>3- Transfer your coin from the exchange to your online maximum trade blockchain wallet.</p></div>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-header"><h5><a class="collapsed" data-toggle="collapse"
+																		data-target="#collapse-1-4">How do I benefit from
+											the ICO Token?<span class="plus-minus"><span
+													class="ti ti-angle-up"></span></span></a></h5></div>
+										<div id="collapse-1-4" class="collapse" data-parent="#accordion-1">
+											<div class="card-body"><p>During an ICO, a company can raise money by creating a website and by publishing a document that describes the project. Investors exchange cash or cryptocurrency(e.g Bitcoin or Ethereum) for digital tokens that the startup has created.</p></div>
+										</div>
+									</div>
+								</div>
+							</div><!-- End tab-pane -->
+							<div class="tab-pane fade" id="tab-2">
+								<div class="accordion-s2" id="accordion-2">
+									<div class="card active">
+										<div class="card-header"><h5><a data-toggle="collapse" data-target="#collapse-2-1">What is cryptocurrency mining?<span class="plus-minus"><span
+													class="ti ti-angle-up"></span></span></a></h5></div>
+										<div id="collapse-2-1" class="collapse show" data-parent="#accordion-2">
+											<div class="card-body"><p>Mining is the process that bitcoin and several other cryptocurrencies use to generate new coin and verify new transactions. It involves vast, decentralized networks of computers around the world that verify and secure blockchains.</p></div>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-header"><h5><a class="collapsed" data-toggle="collapse"
+																		data-target="#collapse-2-2">How much does a crypto miner make?<span class="plus-minus"><span class="ti ti-angle-up"></span></span></a>
+										</h5></div>
+										<div id="collapse-2-2" class="collapse" data-parent="#accordion-2">
+											<div class="card-body"><p>The national average salary for a bitcoin miner is $52,790 in United State.</p></div>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-header"><h5><a class="collapsed" data-toggle="collapse"
+																		data-target="#collapse-2-4">Their separate existence
+											is a myth?<span class="plus-minus"><span
+													class="ti ti-angle-up"></span></span></a></h5></div>
+										<div id="collapse-2-4" class="collapse" data-parent="#accordion-2">
+											<div class="card-body"><p>ICO Crypto - is unique platform; that is secure, smart
+												and easy-to-use platform, and completely disrupting the way businesses raise
+												capital.</p></div>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-header"><h5><a class="collapsed" data-toggle="collapse"
+																		data-target="#collapse-2-3">Pityful a rethoric
+											question ran over her cheek?<span class="plus-minus"><span
+													class="ti ti-angle-up"></span></span></a></h5></div>
+										<div id="collapse-2-3" class="collapse" data-parent="#accordion-2">
+											<div class="card-body"><p>ICO Crypto - is unique platform; that is secure, smart
+												and easy-to-use platform, and completely disrupting the way businesses raise
+												capital.</p></div>
+										</div>
+									</div>
+								</div>
+							</div><!-- End tab-pane -->
+							<div class="tab-pane fade" id="tab-3">
+								<div class="accordion-s2" id="accordion-3">
+									<div class="card active">
+										<div class="card-header"><h5><a data-toggle="collapse" data-target="#collapse-3-1">When
+											she reached the first hills?<span class="plus-minus"><span
+													class="ti ti-angle-up"></span></span></a></h5></div>
+										<div id="collapse-3-1" class="collapse show" data-parent="#accordion-3">
+											<div class="card-body"><p>ICO Crypto - is unique platform; that is secure, smart
+												and easy-to-use platform, and completely disrupting the way businesses raise
+												capital.</p></div>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-header"><h5><a class="collapsed" data-toggle="collapse"
+																		data-target="#collapse-3-2">Big Oxmox advised her
+											not to do?<span class="plus-minus"><span
+													class="ti ti-angle-up"></span></span></a></h5></div>
+										<div id="collapse-3-2" class="collapse" data-parent="#accordion-3">
+											<div class="card-body"><p>ICO Crypto - is unique platform; that is secure, smart
+												and easy-to-use platform, and completely disrupting the way businesses raise
+												capital.</p></div>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-header"><h5><a class="collapsed" data-toggle="collapse"
+																		data-target="#collapse-3-3">Which roasted parts of
+											sentences fly into your mouth?<span class="plus-minus"><span
+													class="ti ti-angle-up"></span></span></a></h5></div>
+										<div id="collapse-3-3" class="collapse" data-parent="#accordion-3">
+											<div class="card-body"><p>ICO Crypto - is unique platform; that is secure, smart
+												and easy-to-use platform, and completely disrupting the way businesses raise
+												capital.</p></div>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-header"><h5><a class="collapsed" data-toggle="collapse"
+																		data-target="#collapse-3-4">Vokalia and Consonantia,
+											there live?<span class="plus-minus"><span class="ti ti-angle-up"></span></span></a>
+										</h5></div>
+										<div id="collapse-3-4" class="collapse" data-parent="#accordion-3">
+											<div class="card-body"><p>ICO Crypto - is unique platform; that is secure, smart
+												and easy-to-use platform, and completely disrupting the way businesses raise
+												capital.</p></div>
+										</div>
+									</div>
+								</div>
+							</div><!-- .tab-pane --></div><!-- .tab-content --></div><!-- .tab-custom --></div><!-- .col -->
+			</div><!-- .row --></div><!-- .container --></div><!-- End Section --><!-- Start Section -->
+	<div class="section section-pad-md section-bg-alt" style="background:-webkit-linear-gradient(left, red 0%, #0b7df2 100%)" id="contact">
+		<div class="ui-shape ui-shape-s7"></div>
+		<div class="container">
+			<div class="row text-center">
+				<div class="col">
+					<div class="section-head-s7"><h2 class="section-title-s7 animated" data-animate="fadeInUp"
+													 data-delay=".1">Contact Us</h2>
+
+						<p class="animated" style="color: white;" data-animate="fadeInUp" data-delay=".2">Any question? Reach out to us and we’ll
+							get back to you shortly.</p></div>
+				</div><!-- .col --></div><!-- .row -->
+			<div class="row justify-content-center">
+				<div class="col-lg-12 ">
+					<ul class="contact-info">
+						<li class="animated" data-animate="fadeInUp" data-delay=".5"><a href="https://t.me/maximumtrade"><em
+								class="fa fa-paper-plane" style="color: white;"></em><span style="color: white;">Join us on Telegram</span></a></li>
+					</ul>
+				</div><!-- .col --></div><!-- .row -->
+			<div class="row justify-content-center">
+				<div class="col-lg-8">
+					<form id="contact-form" class="form-message text-center show-error-hint"
+						  action="" method="post">
+						<div class="form-results"></div>
+						<div class="input-field animated" data-animate="fadeInUp" data-delay=".6"><input name="contact-name"
+																										 type="text"
+																										 class="input-line required"><label
+								class="input-title">Your Name</label></div>
+						<div class="input-field animated" data-animate="fadeInUp" data-delay=".7"><input
+								name="contact-email" type="email" class="input-line required email"><label
+								class="input-title">Your Email</label></div>
+						<div class="input-field animated" data-animate="fadeInUp" data-delay=".8"><textarea
+								name="contact-message" class="txtarea input-line required"></textarea><label
+								class="input-title">Your Message</label></div>
+						<input type="text" class="d-none" name="form-anti-honeypot" value="">
+
+						<div class="input-field animated" data-animate="fadeInUp" data-delay=".9">
+							<button type="submit" class="btn">Submit</button>
+						</div>
+					</form>
+				</div><!-- .col --></div><!-- .row --></div><!-- .container --></div><!-- End Section -->
+	<!-- Start Section -->
+
+{% endblock %}
