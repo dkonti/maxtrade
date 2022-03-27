@@ -83,12 +83,11 @@ WSGI_APPLICATION = 'capitaltrade.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd3heqge8e9a6ml',
-        'USER': 'fpjgvmizigpajd',
-        'PASSWORD': 'cc5138f079754f95ba8b23ec8cfaa83c233db9ba73fd6f05b16c73ddc8bba8e9',
-        'HOST': 'ec2-54-196-105-177.compute-1.amazonaws.com',
-        'PORT':  '5432',
-        'ATOMIC_REQUESTS': True,
+        'NAME': 'maxtradedb',
+        'USER': 'maxtrade_admin',
+        'PASSWORD': 'mellykonti4',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
