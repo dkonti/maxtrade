@@ -84,7 +84,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'maxtradedb',
-        'USER': 'maxtradeDB',
+        'USER': 'maxtrade_admin',
         'PASSWORD': 'mellykonti4',
         'HOST': 'localhost',
         'PORT': '',
