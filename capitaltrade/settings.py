@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'capitaltrade.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'maxtraddb',
+        'NAME': 'maxtradedb',
         'USER': 'maxtradedb',
         'PASSWORD': 'mellykonti4',
         'HOST': 'localhost',
