@@ -9671,27 +9671,27 @@ label.error {
   .io-zinnia .section-bg {
     background: #fff; }
   .io-zinnia .section-bg-alt {
-    background: #fff5f6; }
+    background: red; }
   .io-zinnia .section-bg, .io-zinnia .section-bg-alt {
-    color: #4c5a77; }
+    color: red; }
     .io-zinnia .section-bg h1, .io-zinnia .section-bg h2, .io-zinnia .section-bg h3, .io-zinnia .section-bg h4, .io-zinnia .section-bg h5, .io-zinnia .section-bg h6, .io-zinnia .section-bg-alt h1, .io-zinnia .section-bg-alt h2, .io-zinnia .section-bg-alt h3, .io-zinnia .section-bg-alt h4, .io-zinnia .section-bg-alt h5, .io-zinnia .section-bg-alt h6 {
-      color: #4c5a77; }
+      color: red; }
     .io-zinnia .section-bg p, .io-zinnia .section-bg-alt p {
-      color: #4c5a77; }
+      color: red; }
       .io-zinnia .section-bg p.lead, .io-zinnia .section-bg-alt p.lead {
-        color: #223b55; }
+        color: red; }
     .io-zinnia .section-bg .section-title-s7, .io-zinnia .section-bg .section-title-md, .io-zinnia .section-bg-alt .section-title-s7, .io-zinnia .section-bg-alt .section-title-md {
       color: #fff; }
   .io-zinnia .section-bg-zinnia, .io-zinnia .section-bg-gradient {
-    background: rgb(205, 92, 92);
+    background: red;
     color: #fff; }
     .io-zinnia .section-bg-zinnia h1, .io-zinnia .section-bg-zinnia h2, .io-zinnia .section-bg-zinnia h3, .io-zinnia .section-bg-zinnia h4, .io-zinnia .section-bg-zinnia h5, .io-zinnia .section-bg-zinnia h6, .io-zinnia .section-bg-zinnia p, .io-zinnia .section-bg-zinnia p.lead, .io-zinnia .section-bg-zinnia .section-head-s7 p, .io-zinnia .section-bg-zinnia .section-title-s7, .io-zinnia .section-bg-zinnia .section-title-md, .io-zinnia .section-bg-gradient h1, .io-zinnia .section-bg-gradient h2, .io-zinnia .section-bg-gradient h3, .io-zinnia .section-bg-gradient h4, .io-zinnia .section-bg-gradient h5, .io-zinnia .section-bg-gradient h6, .io-zinnia .section-bg-gradient p, .io-zinnia .section-bg-gradient p.lead, .io-zinnia .section-bg-gradient .section-head-s7 p, .io-zinnia .section-bg-gradient .section-title-s7, .io-zinnia .section-bg-gradient .section-title-md {
       color: #fff; }
   .io-zinnia .section-bg-gradient {
-    background-image: linear-gradient(135deg, #ff6c3f 0%, #fe4350 100%); }
+    background-image: linear-gradient(135deg, red 0%, red 100%); }
   .io-zinnia .footer-section {
     overflow: hidden;
-    background-image: linear-gradient(45deg, red 0%, blue 100%); }
+    background-image: linear-gradient(45deg, red 0%, red 100%); }
   .io-zinnia .footer-bottom {
     padding: 10px 0 40px; }
     .io-zinnia .footer-bottom .copyright-text {

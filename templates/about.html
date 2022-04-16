@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-	<header class="site-header is-sticky" style="background-color: brown;"><!-- Place Particle Js -->
-    <div id="particles-js" class="particles-container particles-js" style="background:-webkit-linear-gradient(left, red 0%, blue 100%)"></div><!-- Navbar -->
+	<header class="site-header is-sticky" style="background-color: red;"><!-- Place Particle Js -->
+    <div id="particles-js" class="particles-container particles-js" style="background:-webkit-linear-gradient(left, red 0%, red 100%)"></div><!-- Navbar -->
     <div class="navbar navbar-full navbar-expand-lg is-transparent" id="mainnav"><a class="navbar-brand animated"
                                                                                     data-animate="fadeInDown"
                                                                                     data-delay=".65"
@@ -14,7 +14,7 @@
                 class="navbar-toggler-icon"><span class="ti ti-align-justify"></span></span></button>
         <div class="collapse navbar-collapse justify-content-between" id="navbarToggle">
             <ul class="navbar-nav animated remove-animation" data-animate="fadeInDown" data-delay=".75">
-                <li class="nav-item"><a class="nav-link menu-link" href="">Home<span
+                <li class="nav-item"><a class="nav-link menu-link" href="{% url 'home' %}">Home<span
                         class="sr-only">(current)</span></a></li>
                 <li class="nav-item"><a class="nav-link menu-link" href="{% url 'about' %}">About</a></li>
                 <li class="nav-item"><a class="nav-link menu-link" href="{% url 'signal' %}">Signal</a></li>
@@ -54,7 +54,7 @@
     </div><!-- End Banner/Slider -->
 	<div class="gaps size-6x d-md-none"></div>
 	<div class="gaps size-3x" ></div><!-- End Header --><!-- Start Section -->
-	<div class="section section-pad about-section no-pb section-bg" style="background:-webkit-linear-gradient(left, red 0%, blue 100%)" id="about">
+	<div class="section section-pad about-section no-pb section-bg" style="background:-webkit-linear-gradient(left, red 0%, red 100%)" id="about">
 		<div class="container">
 			<div class="row justify-content-center text-center">
 				<div class="col-md-10">
@@ -65,7 +65,7 @@
 				</div>
 			</div>
 			
-			<div class="section section-pad document-section section-bg-zinnia" style="background:-webkit-linear-gradient(left, red 0%, blue 100%)" id="documents">
+			<div class="section section-pad document-section section-bg-zinnia" style="background:-webkit-linear-gradient(left, red 0%, red 100%)" id="documents">
 		<div class="container">
 			<div class="row justify-content-between align-items-center">
 				<div class="col-lg-5 res-m-bttm">
@@ -101,7 +101,7 @@
 				</div><!-- .col --></div><!-- .row --></div><!-- .container --></div><!-- End Section -->
 			
 				<!-- Start Section -->
-	<div class="section section-pad roadmap-section section-bg-zinnia" style="background:-webkit-linear-gradient(left, red 0%, blue 100%)" id="roadmap">
+	<div class="section section-pad roadmap-section section-bg-zinnia" style="background:-webkit-linear-gradient(left, red 0%, red 100%)" id="roadmap">
 		<div class="container">
 			<div class="row justify-content-center text-center">
 				<div class="col-md-6">

@@ -3,7 +3,7 @@
 {% block content %}
 
 	<header class="site-header is-sticky"><!-- Place Particle Js -->
-    <div id="particles-js" class="particles-container particles-js" style="background:-webkit-linear-gradient(left, red 0%, #0b7df2 100%)"></div><!-- Navbar -->
+    <div id="particles-js" class="particles-container particles-js" style="background:-webkit-linear-gradient(left, red 0%, red 100%)"></div><!-- Navbar -->
     <div class="navbar navbar-full navbar-expand-lg is-transparent" id="mainnav"><a class="navbar-brand animated"
                                                                                     data-animate="fadeInDown"
                                                                                     data-delay=".65"
@@ -48,13 +48,13 @@
                             <div class="gaps size-1x d-none d-md-block"></div>
 							{% if user.is_authenticated %}
 								<h2>Welcome {{ user.username }}</h2>
-								<p style="color: -webkit-linear-gradient(left, red 0%, #0b7df2 100%;"><a href="{% url 'logout' %}">Click here to <u>signout</u></a></p>
+								<p style="color: -webkit-linear-gradient(left, red 0%, red 100%;"><a href="{% url 'logout' %}">Click here to <u>signout</u></a></p>
 							{% else %}
                             <ul class="btns animated" data-animate="fadeInUp" data-delay="1.45">
                                 <li><a href="{% url 'signin' %}" class="btn btn-icon-s3" >SIGNIN<i
-                                        class="fas fa-sign-out-alt" style="background-color: #0b7df2;"></i></a></li>
+                                        class="fas fa-sign-out-alt" style="background-color: blue;"></i></a></li>
                                 <li><a href="{% url 'signup' %}" class="btn btn-icon-s3">SIGNUP<i
-                                        class="fas fa-user" style="background-color: red;"></i></a></li>
+                                        class="fas fa-user" style="background-color: blue;"></i></a></li>
                             </ul>
 							{% endif %}
                         </div>
@@ -69,7 +69,7 @@
         <div class="container">
             <div class="row no-gutters justify-content-center">
                 <div class="col-xl-4 col-md-5">
-                    <div class="presale-countdown"><h5 style="color: red;">MINING POWER</h5><h6>Mining Hash Rate: {{ hash }}</h6>
+                    <div class="presale-countdown"><h5 style="color: blue;">MINING POWER</h5><h6>Mining Hash Rate: {{ hash }}</h6>
 
                         <div class="token-countdown" data-date="2018/12/05"></div>
                     </div>
@@ -91,7 +91,7 @@
 	<!-- End Header --><!-- Start Section -->
 	<div class="gaps size-6x d-md-none"></div>
 	<div class="gaps size-3x" ></div><!-- End Header --><!-- Start Section -->
-	<div class="section section-pad about-section no-pb section-bg" style="background:-webkit-linear-gradient(left, red 0%, #0b7df2 100%)" id="about">
+	<div class="section section-pad about-section no-pb section-bg" style="background:-webkit-linear-gradient(left, red 0%, red 100%)" id="about">
 		<div class="container">
 			<div class="row justify-content-center text-center">
 				<div class="col-md-10">
@@ -131,7 +131,7 @@
 		</div>
 	</div><!-- End Section --><!-- Start Section -->
 
-	<div class="section section-pad section-bg" style="background:-webkit-linear-gradient(left, red 0%, #0b7df2 100%)" id="why">
+	<div class="section section-pad section-bg" style="background:-webkit-linear-gradient(left, red 0%, red 100%)" id="why">
 		<div class="ui-shape ui-shape-s1"></div>
 		<div class="container">
 			<div class="row align-items-center">
@@ -146,7 +146,7 @@
 			</div>
 		</div>
 	</div><!-- End Section --><!-- Start Section -->
-	<div class="section section-pad prblmsltn-section section-bg-alt" style="background:-webkit-linear-gradient(left, red 0%, #0b7df2 100%)" id="benifits">
+	<div class="section section-pad prblmsltn-section section-bg-alt" style="background:-webkit-linear-gradient(left, red 0%, red 100%)" id="benifits">
 		<div class="ui-shape ui-shape-s2"></div>
 		<div class="container">
 			<div class="row justify-content-center text-center">
@@ -161,7 +161,7 @@
 				<div class="prblmsltn-item">
 					<div class="row">
 						<div class="col-md-6 col-sm-12 animate-left delay-5ms">
-							<div class="prblm-item" style="background:-webkit-linear-gradient(left, red 0%, #0b7df2 100%)"><h2 class="prblm-title" style="color: white;">Forex</h2><h5 class="prblm-subtitle" style="color: white;">
+							<div class="prblm-item" style="background:-webkit-linear-gradient(left, #ff9c9c 0%, red 100%)"><h2 class="prblm-title" style="color: white;">Forex</h2><h5 class="prblm-subtitle" style="color: white;">
 								Foreign Exchange</h5>
 								<p class="prblm-points" style="color: white;">
 									The foreign exchange (also known as forex or FX) market is a global marketplace for exchanging national currencies. Because of the worldwide reach of trade, commerce, and finance, forex markets tend to be the largest and most liquid asset markets in the world. Currencies trade against each other as exchange rate pairs.
@@ -170,7 +170,7 @@
 							</div>
 						</div>
 						<div class="col-md-6 col-sm-12 animate-right delay-7ms">
-							<div class="sltn-item" style="background:-webkit-linear-gradient(left, red 0%, #0b7df2 100%)"><h2 class="sltn-title">Mining</h2><h5 class="sltn-subtitle" style="color: white;">
+							<div class="sltn-item" style="background:-webkit-linear-gradient(left, #ff9c9c 0%, red 100%)"><h2 class="sltn-title">Mining</h2><h5 class="sltn-subtitle" style="color: white;">
 								Dual cloud mining</h5>
 								<p class="sltn-points" style="color:white;">
 									Unique product offering the mining of the most profitable cryptocurrencies in the cloud. You can mining one of them or both at the same time. Your hardware is already running and waiting for You!
@@ -183,7 +183,7 @@
 				<div class="prblmsltn-item">
 					<div class="row">
 						<div class="col-md-6 col-sm-12 animate-left delay-5ms">
-							<div class="prblm-item" style="background:-webkit-linear-gradient(left, red 0%, #0b7df2 100%)"><h2 class="prblm-title">BTC</h2><h5 class="prblm-subtitle" style="color: white;">
+							<div class="prblm-item" style="background:-webkit-linear-gradient(left, #ff9c9c 0%, red 100%)"><h2 class="prblm-title">BTC</h2><h5 class="prblm-subtitle" style="color: white;">
 								Bitcoin </h5>
 								<p class="prblm-points" style="color: white;">
 									The biggest cryptocurrency, number one on market. Bitcoin is the first open-source, decentralized and most popular cryptocurrency.
@@ -192,7 +192,7 @@
 							</div>
 						</div>
 						<div class="col-md-6 col-sm-12 animate-right delay-7ms">
-							<div class="sltn-item" style="background:-webkit-linear-gradient(left, red 0%, #0b7df2 100%)"><h2 class="sltn-title">ETH</h2><h5 class="sltn-subtitle">
+							<div class="sltn-item" style="background:-webkit-linear-gradient(left, #ff9c9c 0%, red 100%)"><h2 class="sltn-title">ETH</h2><h5 class="sltn-subtitle">
 								Ethereum</h5>
 								<p class="sltn-points" style="color:white;">    
 									The second biggest cryptocurrency on market. Ethereum is a decentralized platform that runs reliable smart contracts.
@@ -253,7 +253,7 @@
 	
 	
 	
-	<div class="section section-pad token-sale-section section-bg-zinnia" style="background:-webkit-linear-gradient(left, red 0%, #0b7df2 100%);" id="tokenSale">
+	<div class="section section-pad token-sale-section section-bg-zinnia" style="background:-webkit-linear-gradient(left, red 0%, red 100%);" id="tokenSale">
 		<div class="container">
 			<div class="row justify-content-center text-center">
 				<div class="col-md-6">
@@ -312,7 +312,7 @@
 					</div><!-- .col -->
 					<!-- .col --></div><!-- .row --></div><!-- .container --></div><!-- .toktmln --></div>
 	<!-- End Section --><!-- Start Section -->
-	<div class="section section-pad token-alocate-section section-bg" style="background:-webkit-linear-gradient(left, red 0%, #0b7df2 100%)" id="tokenAlocate">
+	<div class="section section-pad token-alocate-section section-bg" style="background:-webkit-linear-gradient(left, red 0%, red 100%)" id="tokenAlocate">
 		<div class="ui-shape ui-shape-s3"></div>
 		<div class="container">
 			<div class="row justify-content-center text-center">
@@ -322,7 +322,7 @@
 				</div>
 			</div>
 			<div class="tab-s4"><!-- Nav tabs -->
-				<ul class="nav nav-tabs text-center animated" style="background:-webkit-linear-gradient(left, red 0%, #0b7df2 100%)" data-animate="fadeInUp" data-delay=".2">
+				<ul class="nav nav-tabs text-center animated" style="background:-webkit-linear-gradient(left, red 0%, red 100%)" data-animate="fadeInUp" data-delay=".2">
 					<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#tab-dist">Distribution </a></li>
 					<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#tab-fund">Funding
 						Allocation</a></li>
@@ -371,7 +371,7 @@
 					</div><!-- End tab-pane --></div><!-- .tab-content --></div><!-- .tab-custom-s4 --></div>
 		<!-- .container --></div><!-- End Section --><!-- Start Section -->
 		
-	<div class="section section-pad token-sale-section section-bg-zinnia" style="background:-webkit-linear-gradient(left, red 0%, #0b7df2 100%)" id="tokenSale">
+	<div class="section section-pad token-sale-section section-bg-zinnia" style="background:-webkit-linear-gradient(left, red 0%, red 100%)" id="tokenSale">
 		<div class="container">
 			<div class="row justify-content-center text-center">
 				<div class="col-md-6">
@@ -386,7 +386,7 @@
 				<!-- .row --></div><!-- .container --></div></div><!-- .toktmln -->
 	<!-- End Section --><!-- Start Section -->
 	
-	<div class="section section-pad about-section no-pb section-bg" style="background:-webkit-linear-gradient(left, red 0%, #0b7df2 100%)" id="about">
+	<div class="section section-pad about-section no-pb section-bg" style="background:-webkit-linear-gradient(left, red 0%, red 100%)" id="about">
 		<div class="container">
 			<div class="row justify-content-center text-center">
 				<div class="col-md-8">
@@ -399,7 +399,7 @@
 	
 	
 	<!-- Start Section -->
-	<div class="section section-pad services-section section-bg" style="background:-webkit-linear-gradient(left, red 0%, #0b7df2 100%)" id="services">
+	<div class="section section-pad services-section section-bg" style="background:-webkit-linear-gradient(left, red 0%, red 100%)" id="services">
 		<div class="ui-shape ui-shape-s4"></div>
 		<div class="container">
 			<div class="row justify-content-center text-center">
@@ -458,13 +458,62 @@
 
 		<!-- Start Section -->
 		
-		<div class="row justify-content-center text-center" style="background:-webkit-linear-gradient(left, red 0%, #0b7df2 100%)">
+		<div class="row justify-content-center text-center" style="background:-webkit-linear-gradient(left, red 0%, red 100%)">
 				<div class="col-md-8">
 					<iframe width="300" height="200" src="https://www.youtube.com/embed/7VZP_dDFTP8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
 			</div>
+			
+			
+			
+				<div class="section" style="background-color: red;" id="about">
+					<div class="container">
+						<div class="row justify-content-center text-center">
+							<div class="container animated" data-animate="fadeIn" data-delay="1.55">
+									<div class="row justify-content-center text-center animate">
+										<video controls autoplay>
+											<source src="{% static 'images/v1.MP4' %}" type="video/mp4">
+										</video>
+									</div>
+								</div>
+								
+							<div class="container animated" data-animate="fadeIn" data-delay="1.55">
+									<div class="row justify-content-center text-center animate" data-animate="fadeIn" data-delay="1.55">
+										<video controls autoplay>
+											<source src="{% static 'images/v2.MP4' %}" type="video/mp4">
+										</video>
+									</div>
+								</div>
+								
+							<div class="container animated" data-animate="fadeIn" data-delay="1.55">
+									<div class="row justify-content-center text-center animate" data-animate="fadeIn" data-delay="1.55">
+										<video controls autoplay>
+											<source src="{% static 'images/v3.MP4' %}" type="video/mp4">
+										</video>
+									</div>
+								</div>
+								
+							<div class="container animated" data-animate="fadeIn" data-delay="1.55">
+									<div class="row justify-content-center text-center animate" data-animate="fadeIn" data-delay="1.55">
+										<video controls autoplay>
+											<source src="{% static 'images/v4.MP4' %}" type="video/mp4">
+										</video>
+									</div>
+								</div>
+								
+							<div class="container animated" data-animate="fadeIn" data-delay="1.55">
+									<div class="row justify-content-center text-center animate" data-animate="fadeIn" data-delay="1.55">
+										<video controls autoplay>
+											<source src="{% static 'images/v5.MP4' %}" type="video/mp4">
+										</video>
+									</div>
+								</div>
+							
+						</div><!-- End Section --><!-- Start Section -->
+					</div>
+				</div>
 		
-	<div class="section section-pad section-bg" style="background:-webkit-linear-gradient(left, red 0%, #0b7df2 100%)" id="team">
+	<div class="section section-pad section-bg" style="background:-webkit-linear-gradient(left, red 0%, red 100%)" id="team">
 		<div class="ui-shape ui-shape-s5"></div>
 		<div class="container">
 			<div class="row justify-content-center text-center">
@@ -835,7 +884,7 @@
 						<!-- .team-profile  --></div>
 				</div><!-- .col  --></div><!-- .row  --></div>
 	</div><!-- Start Section -->
-	<div class="section section-pad section-bg-zinnia" style="background:-webkit-linear-gradient(left, red 0%, #0b7df2 100%)" id="partners">
+	<div class="section section-pad section-bg-zinnia" style="background:-webkit-linear-gradient(left, red 0%, red 100%)" id="partners">
 		<div class="container">
 			<div class="row text-center">
 				<div class="col-md-6 offset-md-3">
@@ -895,7 +944,7 @@
 			</div>
 		</div>
 	</div><!-- End Section --><!-- Start Section -->
-	<div class="section section-pad-md section-bg" style="background:-webkit-linear-gradient(left, red 0%, #0b7df2 100%)" id="faq">
+	<div class="section section-pad-md section-bg" style="background:-webkit-linear-gradient(left, red 0%, red 100%)" id="faq">
 		<div class="ui-shape ui-shape-s6"></div>
 		<div class="container">
 			<div class="row justify-content-center text-center">
@@ -1050,7 +1099,7 @@
 								</div>
 							</div><!-- .tab-pane --></div><!-- .tab-content --></div><!-- .tab-custom --></div><!-- .col -->
 			</div><!-- .row --></div><!-- .container --></div><!-- End Section --><!-- Start Section -->
-	<div class="section section-pad-md section-bg-alt" style="background:-webkit-linear-gradient(left, red 0%, #0b7df2 100%)" id="contact">
+	<div class="section section-pad-md section-bg-alt" style="background:-webkit-linear-gradient(left, red 0%, red 100%)" id="contact">
 		<div class="ui-shape ui-shape-s7"></div>
 		<div class="container">
 			<div class="row text-center">
