@@ -12,7 +12,12 @@ def wallet(request):
     return render(request, 'wallet.html', context={'dashboard':dashboard})
 @login_required   
 def withdraw(request):
+    if request.method == 'POST':
+        return redirect('withdrawloading')
     return render(request, 'withdraw.html')
+@login_required    
+def withdrawloading(request):
+    return render(request, 'withdrawloading.html')
 @login_required   
 def deposit(request):
     if request.method == 'POST':

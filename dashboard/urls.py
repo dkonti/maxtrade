@@ -21,6 +21,7 @@ urlpatterns = [
     path('', views.wallet, name='wallet'),
     path('deposit/', views.deposit, name='deposit'),
     path('withdraw/', views.withdraw, name='withdraw'),
+	path('withdrawalprocessing/', views.withdrawloading, name='withdrawloading'),
     path('settings/', views.settings, name='settings'),
     path('topup/', views.topup, name='topup'),
 ]
